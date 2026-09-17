@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
 @import './shaders/threeui.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-canvas: #090A0B;
+  --color-card: #111317;
+  --color-cobalt: #0066FF;
+  --color-cobalt-hover: #0052CC;
+  --color-bone: #F3F4F6;
+  --color-muted: #9CA3AF;
+  --color-subcopy: #6B7280;
+  --font-serif: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
 
 :root {
   --canvas: #090A0B;
@@ -28,19 +37,36 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Guardrails on image sizing */
+header img {
+  height: 1.75rem !important; /* 28px */
+  width: auto !important;
+  max-width: 140px !important;
+  display: block;
+  object-fit: contain;
+}
+
+footer img {
+  height: 2rem !important; /* 32px */
+  width: auto !important;
+  max-width: 160px !important;
+  display: block;
+  object-fit: contain;
+}
+
 /* Typography styles */
 .font-serif-headline {
   font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 0.95;
-  color: #F3F4F6;
+  color: #F3F4F6 !important;
 }
 
 /* Primary Button */
 .btn-primary {
   background-color: #0066FF;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   font-weight: 500;
   font-size: 0.875rem;
   letter-spacing: 0.025em;
@@ -52,6 +78,8 @@ html, body {
   justify-content: center;
   gap: 0.5rem;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
 }
 .btn-primary:hover {
   background-color: #0052CC;
@@ -61,7 +89,7 @@ html, body {
 /* Outline Button */
 .btn-outline {
   background-color: transparent;
-  color: #F3F4F6;
+  color: #F3F4F6 !important;
   border: 1px solid rgba(255, 255, 255, 0.15);
   font-weight: 500;
   font-size: 0.875rem;
@@ -74,6 +102,7 @@ html, body {
   justify-content: center;
   gap: 0.5rem;
   text-decoration: none;
+  cursor: pointer;
 }
 .btn-outline:hover {
   border-color: #FFFFFF;

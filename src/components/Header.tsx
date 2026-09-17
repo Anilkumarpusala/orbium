@@ -27,16 +27,12 @@ export const Header: React.FC<HeaderProps> = ({ activePath = '/' }) => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${scrolled ? 'bg-[#090A0B]/90 backdrop-blur-md border-b border-white/10 shadow-lg' : 'bg-[#090A0B]/85 backdrop-blur-md border-b border-white/5'}`}>
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        {/* Left Unit: Logo + Brand Wordmark */}
         <a href="/" className="flex items-center group">
           <img
             src="/assets/images/logo.png"
             alt="ORBIUM Logo"
+            style={{ height: '28px', maxHeight: '28px', width: 'auto' }}
             className="h-7 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
-            onError={(e) => {
-              // fallback if accessed via relative path
-              (e.target as HTMLImageElement).src = '/assets/images/logo.png';
-            }}
           />
           <span className="tracking-[0.2em] font-semibold text-sm text-white ml-3">ORBIUM</span>
         </a>

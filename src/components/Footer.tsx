@@ -31,6 +31,7 @@ export const Footer: React.FC<FooterProps> = ({ showWordmark = true }) => {
             <img
               src="/assets/images/logo.png"
               alt="ORBIUM Emblem"
+              style={{ height: '32px', maxHeight: '32px', width: 'auto' }}
               className="h-8 w-auto mb-4 object-contain"
             />
             <div className="tracking-[0.2em] font-semibold text-base text-white mb-2">ORBIUM</div>
