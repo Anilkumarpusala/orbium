@@ -1,0 +1,201 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  z-index: var(--z-sticky);
+  background-color: transparent;
+  transition: height var(--duration-fast) ease-out,
+              background-color var(--duration-fast) ease-out,
+              border-color var(--duration-fast) ease-out;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid transparent;
+}
+
+.navigation--scrolled {
+  background-color: rgba(13, 13, 14, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom-color: var(--color-border);
+}
+
+.navigation__inner {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 1rem + 2vw, 3.5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation__brand {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.75rem);
+  font-weight: var(--weight-regular);
+  letter-spacing: 0.06em;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: opacity var(--duration-fast) ease-out;
+}
+
+.navigation__brand:hover {
+  opacity: 0.85;
+}
+
+.navigation__links {
+  display: none;
+}
+
+.navigation__link {
+  font-family: var(--font-body);
+  text-decoration: none;
+  color: var(--color-text-secondary);
+  font-size: 0.76rem;
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  transition: color var(--duration-fast) ease-out;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.navigation__link:hover {
+  color: var(--color-text-primary);
+}
+
+.navigation__link--active {
+  color: var(--color-text-primary);
+}
+
+.navigation__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-accent);
+}
+
+.navigation__action {
+  display: none;
+}
+
+.navigation__hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  padding: 8px;
+}
+
+.navigation__hamburger-line {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--color-text-primary);
+  transition: transform var(--duration-fast) ease-out, opacity var(--duration-fast) ease-out;
+}
+
+/* Mobile Menu Overlay */
+.navigation__mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #0D0D0E;
+  z-index: var(--z-modal);
+  padding: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-normal) ease-out;
+}
+
+.navigation__mobile-overlay--open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.navigation__mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navigation__close-btn {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  font-size: 1.6rem;
+  line-height: 1;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation__mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.navigation__mobile-link {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.5rem + 2.5vw, 2.8rem);
+  text-decoration: none;
+  color: var(--color-text-secondary);
+  transition: color var(--duration-fast) ease-out;
+}
+
+.navigation__mobile-link:hover,
+.navigation__mobile-link--active {
+  color: var(--color-text-primary);
+}
+
+.navigation__mobile-link--accent {
+  color: var(--color-accent);
+  margin-top: 1.5rem;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+@media (min-width: 860px) {
+  .navigation__links {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.5rem, 1rem + 1.2vw, 2.75rem);
+  }
+
+  .navigation__action {
+    display: block;
+  }
+
+  .navigation__hamburger {
+    display: none;
+  }
+
+  .navigation__mobile-overlay {
+    display: none;
+  }
+}

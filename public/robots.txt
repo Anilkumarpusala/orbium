@@ -1,0 +1,11 @@
+# Robots.txt for Orbium Studio
+# Production crawl rules for search engines
+User-agent: *
+Allow: /
+
+# Disallow private staging or asset cache directories if applicable
+Disallow: /scratch/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://orbium.studio/sitemap.xml

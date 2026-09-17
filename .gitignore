@@ -1,3 +1,12 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production Build
+dist/
+dist-ssr/
+
 # System & OS
 .DS_Store
 Thumbs.db

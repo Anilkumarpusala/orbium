@@ -1,0 +1,141 @@
+﻿/* ========================================
+   ORBIUM Positioning Statement — Editorial Cascade
+   ======================================== */
+
+.positioning {
+  padding: var(--space-12) 0;
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.positioning__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.positioning__tag {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.positioning__tag-line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+/* Cascade Rows */
+.positioning__cascade {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-10);
+}
+
+.positioning__row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  width: fit-content;
+}
+
+@media (min-width: 768px) {
+  .positioning__row--2 {
+    margin-left: clamp(8%, 12vw, 20%);
+  }
+
+  .positioning__row--3 {
+    margin-left: clamp(16%, 24vw, 36%);
+  }
+
+  .positioning__row--4 {
+    margin-left: clamp(24%, 36vw, 52%);
+  }
+}
+
+.positioning__word {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5.2vw, 5rem);
+  font-weight: var(--weight-regular);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  transition: color var(--duration-normal) var(--ease-out);
+}
+
+.positioning__row:hover .positioning__word {
+  color: var(--color-accent);
+}
+
+.positioning__dot {
+  color: var(--color-accent);
+}
+
+.positioning__descriptor {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  opacity: 0.8;
+}
+
+/* Conclusion Statement */
+.positioning__conclusion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.positioning__statement-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.positioning__statement {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+  line-height: 1.2;
+  color: var(--color-text-primary);
+  max-width: 32ch;
+  margin: 0;
+}
+
+.positioning__subtext {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  max-width: 44ch;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .positioning {
+    padding: var(--space-8) 0;
+  }
+
+  .positioning__cascade {
+    gap: var(--space-3);
+    margin-bottom: var(--space-8);
+  }
+
+  .positioning__row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .positioning__statement-row {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+}

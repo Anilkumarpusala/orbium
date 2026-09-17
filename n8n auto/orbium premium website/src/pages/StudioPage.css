@@ -1,0 +1,135 @@
+/* ========================================
+   Studio Page — Editorial Founder Profile
+   ======================================== */
+
+.studio-page {
+  background-color: var(--color-bg-primary);
+  min-height: 100vh;
+  padding-top: calc(var(--nav-height) + clamp(2.5rem, 2rem + 2vw, 4.5rem));
+  padding-bottom: clamp(4rem, 3rem + 4vw, 7rem);
+}
+
+.studio-page__header {
+  margin-bottom: clamp(3rem, 2rem + 3vw, 5rem);
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.studio-page__title {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.studio-page__lead {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  max-width: 650px;
+}
+
+.studio-page__founder-section {
+  padding: 1rem 0;
+}
+
+.studio-page__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 2rem + 3vw, 5rem);
+  align-items: start;
+}
+
+@media (min-width: 992px) {
+  .studio-page__grid {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: clamp(3.5rem, 2.5rem + 3vw, 6rem);
+  }
+
+  .studio-page__portrait-wrap {
+    position: sticky;
+    top: calc(var(--nav-height) + 2rem);
+  }
+}
+
+.studio-page__section-title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.studio-page__prose {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.studio-page__prose p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+.studio-page__principles {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 3rem;
+}
+
+.studio-principle {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.studio-principle__num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.studio-principle__title {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.studio-principle__desc {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+.studio-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.studio-page__email {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.studio-page__email:hover {
+  text-decoration: underline;
+}

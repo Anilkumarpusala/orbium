@@ -1,0 +1,153 @@
+/* ========================================
+   Home Insights — Editorial Publications
+   ======================================== */
+
+.home-insights {
+  background-color: var(--color-bg-primary);
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.home-insights__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: clamp(2.5rem, 2rem + 2vw, 4.5rem);
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+@media (min-width: 768px) {
+  .home-insights__header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.home-insights__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+  margin-top: 0.5rem;
+  max-width: 600px;
+}
+
+.home-insights__all-link {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform var(--duration-fast);
+}
+
+.home-insights__all-link:hover span {
+  transform: translateX(4px);
+}
+
+/* 3-Article Grid */
+.home-insights__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 1.5rem + 1.5vw, 3rem);
+}
+
+@media (min-width: 860px) {
+  .home-insights__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.insight-card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 1.25rem + 1vw, 2.25rem);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--duration-fast) ease-out, transform var(--duration-fast) ease-out;
+}
+
+.insight-card:hover {
+  border-color: var(--color-border-strong);
+  transform: translateY(-2px);
+}
+
+.insight-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.insight-card__index {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.insight-card__cat {
+  color: var(--color-text-tertiary);
+}
+
+.insight-card__time {
+  color: var(--color-text-tertiary);
+  margin-left: auto;
+}
+
+.insight-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 1.15rem + 0.8vw, 1.65rem);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-snug);
+  margin-bottom: 1rem;
+}
+
+.insight-card__title a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color var(--duration-fast);
+}
+
+.insight-card__title a:hover {
+  color: var(--color-accent);
+}
+
+.insight-card__excerpt {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.insight-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.insight-card__link:hover span {
+  transform: translateX(4px);
+}

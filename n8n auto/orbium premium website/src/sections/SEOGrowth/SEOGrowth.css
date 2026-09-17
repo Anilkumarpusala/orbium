@@ -1,0 +1,195 @@
+﻿/* ========================================
+   ORBIUM SEO & Growth — Continuous Lifecycle
+   ======================================== */
+
+.seo-growth-section {
+  padding: var(--space-16) 0 var(--space-12);
+  background-color: #0B0C0E;
+  color: var(--color-text-on-dark);
+  border-bottom: 1px solid rgba(243, 240, 232, 0.08);
+}
+
+.seo-growth__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-8);
+  margin-bottom: var(--space-12);
+  flex-wrap: wrap;
+}
+
+.seo-growth__header-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.seo-growth__headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.2vw, 4rem);
+  font-weight: var(--weight-regular);
+  line-height: 1.08;
+  color: var(--color-text-on-dark);
+  margin: 0;
+  max-width: 22ch;
+}
+
+.seo-growth__lead {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-on-dark-secondary);
+  max-width: 48ch;
+  margin: 0;
+}
+
+/* Lifecycle Flow Ribbon */
+.lifecycle-flow {
+  background-color: #121418;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius-sm);
+  padding: var(--space-6) var(--space-8);
+  margin-bottom: var(--space-12);
+}
+
+.lifecycle-flow__label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+}
+
+.lifecycle-flow__track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.lifecycle-flow__step {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lifecycle-flow__step-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.lifecycle-flow__step-name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-text-on-dark);
+}
+
+.lifecycle-flow__step-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: rgba(243, 240, 232, 0.5);
+}
+
+.lifecycle-flow__connector {
+  color: var(--color-accent);
+  font-size: var(--text-lg);
+  opacity: 0.7;
+}
+
+/* 7 Pillars Grid */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pillars-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+  }
+}
+
+.pillar-card {
+  padding: var(--space-6);
+  background-color: #121418;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: border-color var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out);
+}
+
+.pillar-card:hover {
+  border-color: rgba(200, 90, 50, 0.4);
+  background-color: #15181E;
+}
+
+.pillar-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
+
+.pillar-card__tag {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+}
+
+.pillar-card__dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(243, 240, 232, 0.3);
+}
+
+.pillar-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-text-on-dark);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.pillar-card__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-on-dark-secondary);
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .seo-growth-section {
+    padding: var(--space-10) 0;
+  }
+
+  .lifecycle-flow {
+    padding: var(--space-4);
+  }
+
+  .lifecycle-flow__connector {
+    display: none;
+  }
+
+  .lifecycle-flow__track {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+}

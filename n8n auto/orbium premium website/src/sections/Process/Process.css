@@ -1,0 +1,189 @@
+/* ========================================
+   Process Section — Editorial Vertical Sequence
+   ======================================== */
+
+.process-editorial {
+  background-color: var(--color-bg-primary);
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.process-editorial__header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: clamp(3rem, 2.5rem + 3vw, 5.5rem);
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+@media (min-width: 860px) {
+  .process-editorial__header {
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-end;
+    gap: 4rem;
+  }
+}
+
+.process-editorial__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+  margin-top: 0.5rem;
+}
+
+.process-editorial__lead {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  max-width: 520px;
+}
+
+/* Vertical Sequence */
+.process-editorial__sequence {
+  display: flex;
+  flex-direction: column;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.process-step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: clamp(1.5rem, 1rem + 1vw, 2.5rem);
+  position: relative;
+  padding-bottom: clamp(2rem, 1.5rem + 1.5vw, 3.25rem);
+}
+
+.process-step:last-child {
+  padding-bottom: 0;
+}
+
+.process-step__col-num {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.process-step__num {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-accent);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.process-step__line {
+  flex: 1;
+  width: 1px;
+  background-color: var(--color-border);
+  margin-top: 0.5rem;
+}
+
+.process-step:last-child .process-step__line {
+  display: none;
+}
+
+.process-step__col-main {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.2rem;
+}
+
+.process-step__title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.process-step__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.85rem);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-primary);
+  letter-spacing: 0.04em;
+}
+
+.process-step__focus {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}
+
+.process-step__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+}
+
+.process-step__deliverable {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.85rem;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  width: fit-content;
+}
+
+.process-step__deliv-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+}
+
+.process-step__deliv-val {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.process-editorial__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(3rem, 2rem + 2vw, 4.5rem);
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.process-editorial__more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  font-weight: var(--weight-medium);
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: transform var(--duration-fast);
+}
+
+.process-editorial__more-link:hover span {
+  transform: translateX(4px);
+}

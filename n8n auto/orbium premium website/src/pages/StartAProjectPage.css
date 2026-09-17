@@ -1,0 +1,395 @@
+/* ========================================
+   Start a Project — 10-Step Guided Inquiry Page
+   ======================================== */
+
+.inquiry-page {
+  padding-top: calc(var(--nav-height) + clamp(2.5rem, 2rem + 2vw, 4.5rem));
+  padding-bottom: clamp(4rem, 3rem + 4vw, 7rem);
+  background-color: var(--color-bg-primary);
+  min-height: 100vh;
+}
+
+.inquiry-header {
+  margin-bottom: clamp(2rem, 1.5rem + 1.5vw, 3rem);
+}
+
+.inquiry-title {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.inquiry-subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+}
+
+/* Progress Bar */
+.inquiry-progress {
+  margin-bottom: 2rem;
+}
+
+.inquiry-progress__bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.inquiry-progress__fill {
+  height: 100%;
+  background-color: var(--color-accent);
+  transition: width 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.inquiry-progress__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+}
+
+.inquiry-progress__step-name {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+/* Main Card */
+.inquiry-card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  padding: clamp(1.75rem, 1.25rem + 2vw, 3.25rem);
+  box-shadow: var(--shadow-object);
+}
+
+.step-panel {
+  display: flex;
+  flex-direction: column;
+  animation: stepIn 250ms ease-out;
+}
+
+@keyframes stepIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.step-prompt {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.step-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.35rem);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-snug);
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.step-helper {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: 2rem;
+}
+
+/* Stack of Cards (Step 1, 7, 8) */
+.option-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.option-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.25rem 1.5rem;
+  background-color: #17171A;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color var(--duration-fast), background-color var(--duration-fast);
+}
+
+.option-card:hover {
+  border-color: var(--color-border-strong);
+  background-color: #1C1C20;
+}
+
+.option-card--active {
+  border-color: var(--color-accent);
+  background-color: rgba(208, 83, 43, 0.08);
+}
+
+.option-title {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.option-desc {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  line-height: var(--leading-normal);
+  color: var(--color-text-secondary);
+}
+
+/* Checkbox Grid (Step 5) */
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+@media (min-width: 640px) {
+  .checkbox-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.check-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem 1.25rem;
+  background-color: #17171A;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color var(--duration-fast), background-color var(--duration-fast);
+}
+
+.check-card:hover {
+  border-color: var(--color-border-strong);
+}
+
+.check-card--checked {
+  border-color: var(--color-accent);
+  background-color: rgba(208, 83, 43, 0.08);
+}
+
+.check-box {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.check-card--checked .check-box {
+  border-color: var(--color-accent);
+  background-color: rgba(208, 83, 43, 0.2);
+}
+
+.check-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.check-title {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.check-desc {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  line-height: var(--leading-normal);
+  color: var(--color-text-secondary);
+}
+
+/* Fields */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.field-label {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.field-label .req {
+  color: var(--color-accent);
+}
+
+.field-input,
+.field-textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background-color: #121215;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color var(--duration-fast);
+}
+
+.field-input:focus,
+.field-textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background-color: #151518;
+}
+
+.field-input--error {
+  border-color: #D32F2F;
+}
+
+.field-error {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: #EF5350;
+}
+
+/* Review Box (Step 10) */
+.review-box {
+  background-color: #121215;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.review-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 1rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.review-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}
+
+.review-val {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.inquiry-guarantee {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Controls (Back / Next) */
+.inquiry-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.inquiry-next-btn,
+.inquiry-submit-btn {
+  margin-left: auto;
+}
+
+/* Success State */
+.inquiry-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.inquiry-success__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.inquiry-success__title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+}
+
+.inquiry-success__body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  max-width: 540px;
+  margin-bottom: 0.75rem;
+}
+
+.inquiry-success__sub {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  max-width: 480px;
+  margin-bottom: 2rem;
+}
+
+.inquiry-error-banner {
+  padding: 0.75rem 1rem;
+  background-color: rgba(211, 47, 47, 0.15);
+  border: 1px solid #D32F2F;
+  border-radius: var(--radius-sm);
+  color: #FFCDD2;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
